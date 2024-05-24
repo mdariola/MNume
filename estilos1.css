@@ -240,7 +240,7 @@ footer{
 }
 
 .btn {
-    background-color: #4CAF50; /* Color de fondo */
+    background-color: #19721c; /* Color de fondo */
     border: none;             /* Sin borde */
     color: white;             /* Color del texto */
     padding: 15px 32px;       /* Relleno */
@@ -255,7 +255,7 @@ footer{
 }
 
 .btn:hover {
-    background-color: #45a049; /* Color de fondo al pasar el ratón */
+    background-color: #19721c; /* Color de fondo al pasar el ratón */
 }
 
 .btn:active {
