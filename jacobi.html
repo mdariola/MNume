@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mediateca MenNum</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagenes/11.png">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">   
+    <script src="https://kit.fontawesome.com/10e8731c12.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Métodos</a></li>
+                <li><a href="dudas1.html">Dudas</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Jacobi</h1>
+        <section class="main">
+            <section class="articles">
+                <article>
+                    <h2>Introducción</h2>
+                    <p>El método de Jacobi es un método iterativo utilizado para resolver sistemas de ecuaciones lineales. Consiste basicamente en obtener una ecuacion de recurrencia (matricial en este caso)y proponer un
+                        vector solucion inicial; posteriormente, se deberan realizar las iteraciones necesarias hasta que la
+                        diferencia entre dos vectores consecutivos cumpla con una tolerancia predefinida.
+                        
+                    </p>
+                    <img src="jacobi.jpg" class="imagen-noticias" alt="Imagen de Jacobi.">
+                    
+                    <h2>Ventajas</h2>
+                    <ul>
+                        <li>El método de Jacobi es sencillo de entender e implementar, especialmente adecuado para problemas educativos y ejemplos básicos.</li>
+                        <li>Los cálculos de cada componente del vector solución en una iteración son independientes entre sí, lo que permite una implementación paralela eficiente.</li>
+                        <li>A diferencia de métodos como la eliminación gaussiana o la descomposición LU, el método de Jacobi no requiere la factorización de la matriz, lo cual puede ser ventajoso en algunos casos.</li>
+                    </ul>
+                    
+                    <h2>Desventajas</h2>
+                    <ul>
+                        <li>La convergencia no está garantizada para todas las matrices. La matriz debe ser estrictamente diagonalmente dominante o simétrica y definida positiva para garantizar la convergencia.</li>
+                        <li>Para alcanzar una precisión alta, pueden ser necesarias muchas iteraciones, lo que aumenta el tiempo de cálculo y los recursos computacionales necesario.</li>
+                        <li>En algunos casos, la acumulación de errores de redondeo puede afectar la precisión y estabilidad de la solución, especialmente en sistemas grandes.</li>
+                    </ul>
+                    
+                    <h2>Explicación del Método</h2>
+                    <ol>
+                        <li>
+                            <h3>Analizar la diagonal dominante</h3>
+                            <p>En este primer paso tenemos que despejar a de la ecuacion 1, b de la ecuacion 2 y c de la ecuacion 3.</p>
+                            <img src="dominantejacobi.png" class="img-fluid" alt="Despeje inicial Jacobi">
+                            <p>Estas ecuaciones las llamaremos 4, 5 y 6.</p>
+                        </li>
+                        <li>
+                            <h3>Comenzar las iteraciones</h3>
+                            <p>En este paso calcularemos a1, b1 y c1. A1 se calculara con la ecuacion 4, B1 con la ecuacion 5 y C1 con la ecuacion 6.</p>
+                            <img src="iteracionhacobi.png" class="img-fluid" alt="Primera iteracion Jacobi">
+                            <p>Los valores de a0, b0 y c0 se sustituyen con un valor inicial, el cual sera 1.</p>
+                        </li>
+                        <li>
+                            <h3>Calcular el error.</h3>
+                            <p>El siguiente paso es calcular el error para las 3 variables (a, b y c). Para hacerlo simplemente le restaremos al valor calculado el valor con el que hicimos los calculos.</p>
+                            <img src="errorjacobi.png" class="img-fluid" alt="Fórmula Error Jacobi">
+                            <p>En esta primera iteracion seria A1 - A0 para el caso de la variable a. El error tiene que ser .001 almenos, de lo contrario volvemos a iterar usando el proceso del paso 2.</p>
+                        </li>
+                        <li>
+                            <h3>Encontrar el resultado final.</h3>
+                            <p>Al encontrar en las 3 variables un factor error de .001 terminaremos nuestro proceso, ya que habremos encontrado nuestros resultados deseados.</p>
+                            <img src="errordeseado.png" class="img-fluid" alt="Error deseado">
+                        </li>
+                    </ol>
+                    
+                    <h2>Video explicativo</h2>
+                    <video width="640" height="360" controls class="mb-3">
+                        <source src="Lagrange.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <br><br>
+                    <a href="practicalagrange.html" class="btn btn-primary">Practica</a>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <footer align="center">
+        <p>©2024 Marco Antonio Arreola de León</p>
+        <p>Pedro de Alba SN, Niños Héroes, Ciudad Universitaria, 66455 San Nicolás de los Garza, N.L.</p>
+        <p>Proyecto realizado para: Métodos Numéricos.</p>
+        <div class="buttons">
+            <a href="https://www.facebook.com/profile.php?id=61556784717915" class="fa fa-facebook" aria-label="Facebook"></a>
+            <a href="https://www.instagram.com/hermes_fime/" class="fa fa-instagram" aria-label="Instagram"></a>
+        </div>
+    </footer>
+</body>
+</html>
