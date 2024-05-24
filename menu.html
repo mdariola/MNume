@@ -37,7 +37,7 @@
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50;
+    background-color: #19721c;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -66,7 +66,7 @@
 <div class="container">
   <h1>Menú de Métodos Numéricos</h1>
   <div class="menu">
-    <select onchange="seleccionarMetodo(this.value)">
+    <select onchange="seleccionarMetodo(this.value)" aria-label="Selecciona un método numérico">
         <option value="" selected disabled>Selecciona un método</option>
         <option value="InterpolacionLineal">Interpolación Lineal</option>
         <option value="Lagrange">Lagrange</option>
