@@ -1,0 +1,123 @@
+<HTML>
+    <head>
+        <title>Mediateca MenNum</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link rel="icon" href="imagenes/11.png">
+        <meta charset="utf-8">
+        <link rel="icon" href="imagenes/hermes.jpg">
+	    <link rel="stylesheet" type="text/css" href="estilos.css">
+        <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rosario:ital,wght@0,300..700;1,300..700&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">   
+        <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Cormorant+Upright:wght@300;400;500;600;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rosario:ital,wght@0,300..700;1,300..700&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/10e8731c12.js" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Cormorant+Upright:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rosario:ital,wght@0,300..700;1,300..700&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+            <header>
+                    <nav>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="menu.html">Métodos</a></li>
+                        <li><a href="dudas1.html">Dudas</a></li>
+                    </ul>
+                </nav>
+            </header>
+                
+            <h1>LAGRANGE</h1>
+            <section class="main">
+                <section class="articles">
+                    <article>
+                        <h3>Introducción</h3>
+                        <p>La interpolación por Lagrange es un método utilizado en matemáticas para construir un polinomio que pase exactamente por un conjunto de puntos dados.</p>
+                        <img src="imagenes/Lagrange.jpg"  class="img-fluid" alt="Imagen de Lagrange">
+                        <h3>Ventajas</h3>
+                        <ul>
+                            <li>El método de Lagrange es relativamente sencillo de entender y aplicar.</li>
+                            <li>La interpolación de Lagrange se puede utilizar con cualquier conjunto de puntos (siempre que no haya dos puntos con la misma coordenada x).</li>
+                            <li>La fórmula de Lagrange es fácil de implementar en algoritmos de software.</li>
+                        </ul>
+                        <h3>Desventajas</h3>
+                        <ul>
+                            <li>La cantidad de cálculos necesarios para la interpolación es grande.</li>
+                            <li>La interpolación para otro valor x requiere la misma cantidad de cálculos adicionales, ya que no se pueden utilizar partes de los cálculos previos.</li>
+                            <li>Cuando el número de datos tiene que incrementarse o decrementarse, no se pueden utilizar los resultados de los cálculos previos.</li>
+                            <li>La evaluación de error no es fácil.</li>
+                        </ul>
+                        <h3>Explicación del Método</h3>
+                        <ol>
+                            <li>Determinar los puntos de datos</li>
+                            <p>En este paso simplemente visualizaremos los datos que se nos han proporcionado. La función g(x) debería estar entre dos intervalos definidos.</p>
+                            <li>Definir los polinomios</li>
+                            <p>En este paso formaremos los polinomios. Haremos uno por cada punto (x,y) que tengamos. La composición de estos polinomios es específica.</p>
+                            <img src="imagenes/LagrangeFormula.png" class="img-fluid" alt="Fórmula de Lagrange">
+                            <p>Como podemos observar, comenzamos con el valor de y1. Este valor multiplica el resultado de dividir el producto de las diversas diferencias X - Xj.</p>
+                            <p>Las multiplicaciones de la parte superior consisten en multiplicar los resultados de las restas de X - Xj. En estas, el valor de X es el punto donde se evalúa el polinomio.</p>
+                            <p>Las multiplicaciones de la parte inferior consisten en multiplicar los resultados de las restas de Xi - Xj. En estas, el valor de Xi es el valor de cada punto de datos.</p>
+                            <li>Resolver los polinomios</li>
+                            <p>Para resolver estos polinomios simplemente seguimos las fórmulas.</p>
+                            <p>Lo primero es hacer las series de multiplicaciones, las cuales, al terminarlas, dividimos la parte superior entre la inferior.</p>
+                            <p>El resultado lo multiplicamos por el valor de yi, anotando el valor.</p>
+                            <li>Sumar todos los polinomios</li>
+                            <p>Para terminar con el procedimiento, tenemos que sumar los valores que obtuvimos en cada polinomio, siendo la suma de todos estos el polinomio de interpolación final.</p>
+                        </ol>
+                        <h3>Video explicativo</h3>
+                        <video width="640" height="360" controls class="mb-3">
+                            <source src="LagrangeSub.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video.
+                        </video>
+                    </br>
+                </br>
+                        <a href="practicalagrange.html" class="btn btn-primary">Practica</a>
+                    </article>
+                </section>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                
+                
+                
+                
+                                                                                     
+            <footer align="center">
+                <p>©2024 Marco Antonio Arreola de León</p></br>
+                <p>Pedro de Alba SN, Niños Héroes, Ciudad Universitaria, 66455 San Nicolás de los Garza, N.L.</p></br>
+                <p>Proyecto realizado para: Métodos Numéricos.</p>
+                <div class="buttons">
+                    <a href="https://www.facebook.com/profile.php?id=61556784717915" class="fa fa-facebook" aria-label="Facebook"></a>></a>
+                    <a href="https://www.instagram.com/hermes_fime/" class="fa fa-instagram" aria-label="Instagram"></a>
+                </div>
+            </footer>
+    </body>
+</HTML>

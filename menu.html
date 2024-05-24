@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="estilos.css">
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rosario:ital,wght@0,300..700;1,300..700&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">   
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Cormorant+Upright:wght@300;400;500;600;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rosario:ital,wght@0,300..700;1,300..700&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/10e8731c12.js" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Cormorant+Upright:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rosario:ital,wght@0,300..700;1,300..700&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+<title>Mediateca MetNum</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  .menu {
+    text-align: center;
+  }
+  select {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #19721c;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  select:hover {
+    background-color: #19721c;
+
+
+}
+</style>
+</head>
+<body>
+  <header>
+          <nav>
+          <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="menu.html">Métodos</a></li>
+              <li><a href="dudas1.html">Dudas</a></li>
+          </ul>
+      </nav>
+  </header>
+
+
+
+
+<div class="container">
+  <h1>Menú de Métodos Numéricos</h1>
+  <div class="menu">
+    <select onchange="seleccionarMetodo(this.value)">
+        <option value="" selected disabled>Selecciona un método</option>
+        <option value="InterpolacionLineal">Interpolación Lineal</option>
+        <option value="Lagrange">Lagrange</option>
+        <option value="NewtonDiferenciasDivididas">Newton con Diferencias Divididas</option>
+        <option value="NewtonAdelante">Newton hacia Adelante</option>
+        <option value="NewtonAtras">Newton hacia Atrás</option>
+        <option value="Bisectriz">Bisectriz</option>
+        <option value="FalsaPosicion">Falsa Posición ó Regula</option>
+        <option value="NewtonRaphson">Newton – Raphson</option>
+        <option value="PuntoFijo">Punto Fijo ó Sustituciones Sucesivas</option>
+        <option value="Secante">Secante</option>
+        <option value="Montante">Montante</option>
+        <option value="GaussJordan">Gauss – Jordán</option>
+        <option value="EliminacionGaussiana">Eliminación Gaussiana</option>
+        <option value="GaussSeidel">Gauss – Seidel</option>
+        <option value="Jacobi">Jacobi</option>
+        <option value="LineaRecta">Línea Recta</option>
+        <option value="Cuadratica">Cuadrática</option>
+        <option value="Cubica">Cúbica</option>
+        <option value="LinealFuncion">Lineal con Función</option>
+        <option value="CuadraticaFuncion">Cuadrática con Función</option>
+        <option value="ReglaTrapezoidal">Regla Trapezoidal</option>
+        <option value="Simpson13">Regla de 1/3 de Simpson</option>
+        <option value="Simpson38">Regla de 3/8 de Simpson</option>
+        <option value="NewtonCotesCerradas">Newton – Cotes Cerradas</option>
+        <option value="NewtonCotesAbiertas">Newton – Cotes Abiertas</option>
+    </select>
+</div>
+</div>
+<script>
+function seleccionarMetodo(metodo) {
+    if (metodo !== "") {
+        switch (metodo) {
+            case "InterpolacionLineal":
+                window.location.href = "interpo.html";
+                break;
+            case "Lagrange":
+                window.location.href = "index1.html";
+                break;
+            case "NewtonDiferenciasDivididas":
+                window.location.href = "newton_diferencias_divididas.html";
+                break;
+            case "NewtonAdelante":
+                window.location.href = "newton_adelante.html";
+                break;
+            case "NewtonAtras":
+                window.location.href = "newton_atras.html";
+                break;
+            case "Bisectriz":
+                window.location.href = "bisectriz.html";
+                break;
+            case "FalsaPosicion":
+                window.location.href = "falsa_posicion.html";
+                break;
+            case "NewtonRaphson":
+                window.location.href = "newton_raphson.html";
+                break;
+            case "PuntoFijo":
+                window.location.href = "punto_fijo.html";
+                break;
+            case "Secante":
+                window.location.href = "secante.html";
+                break;
+            case "Montante":
+                window.location.href = "montante.html";
+                break;
+            case "GaussJordan":
+                window.location.href = "gauss_jordan.html";
+                break;
+            case "EliminacionGaussiana":
+                window.location.href = "eliminacion_gaussiana.html";
+                break;
+            case "GaussSeidel":
+                window.location.href = "gauss_seidel.html";
+                break;
+            case "Jacobi":
+                window.location.href = "jacobi.html";
+                break;
+            case "LineaRecta":
+                window.location.href = "linea_recta.html";
+                break;
+            case "Cuadratica":
+                window.location.href = "cuadratica.html";
+                break;
+            case "Cubica":
+                window.location.href = "cubica.html";
+                break;
+            case "LinealFuncion":
+                window.location.href = "lineal_funcion.html";
+                break;
+            case "CuadraticaFuncion":
+                window.location.href = "cuadratica_funcion.html";
+                break;
+            case "ReglaTrapezoidal":
+                window.location.href = "regla_trapezoidal.html";
+                break;
+            case "Simpson13":
+                window.location.href = "simpson_13.html";
+                break;
+            case "Simpson38":
+                window.location.href = "simpson_38.html";
+                break;
+            case "NewtonCotesCerradas":
+                window.location.href = "newton_cotes_cerradas.html";
+                break;
+            case "NewtonCotesAbiertas":
+                window.location.href = "newton_cotes_abiertas.html";
+                break;
+            default:
+                alert('Has seleccionado: ' + metodo);
+                // Aquí podrías agregar el código para dirigir al usuario a la página correspondiente o realizar alguna acción específica según el método.
+        }
+    }
+}
+</script>
+<footer align="center">
+  <p>©2024 Marco Antonio Arreola de León</p></br>
+  <p>Pedro de Alba SN, Niños Héroes, Ciudad Universitaria, 66455 San Nicolás de los Garza, N.L.</p></br>
+  <p>Proyecto realizado para: Métodos Numéricos.</p>
+  <div class="buttons">
+    <a href="https://www.facebook.com/profile.php?id=61556784717915" class="fa fa-facebook" aria-label="Facebook"></a>></a>
+    <a href="https://www.instagram.com/hermes_fime/" class="fa fa-instagram" aria-label="Instagram"></a>
+    </div>
+</footer>
+</body>
+</html>

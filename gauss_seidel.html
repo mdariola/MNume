@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mediateca MenNum</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagenes/11.png">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">   
+    <script src="https://kit.fontawesome.com/10e8731c12.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Métodos</a></li>
+                <li><a href="dudas1.html">Dudas</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Gauss-Seidel</h1>
+        <section class="main">
+            <section class="articles">
+                <article>
+                    <h2>Introducción</h2>
+                    <p>El método de Gauss-Seidel es una técnica iterativa para resolver sistemas de ecuaciones lineales. Es una mejora del método de Jacobi y se usa ampliamente debido a su mayor velocidad de convergencia en comparación con Jacobi. 
+                    </p>
+                    <img src="seidel.jpg" class="imagen-noticias" alt="Imagen de Seidel.">
+                    
+                    <h2>Ventajas</h2>
+                    <ul>
+                        <li>Converge más rápidamente que el método de Jacobi debido a la utilización de los valores más recientes de las variables.</li>
+                        <li>Es relativamente sencillo de implementar en algoritmos computacionales.</li>
+                        <li>No necesita almacenar las matrices de coeficientes, solo el vector de solución.</li>
+                    </ul>
+                    
+                    <h2>Desventajas</h2>
+                    <ul>
+                        <li>Menos adecuado para paralelización comparado con el método de Jacobi, ya que cada cálculo depende del anterior dentro de la misma iteración.</li>
+                        <li>Requiere que la matriz del sistema sea estrictamente diagonalmente dominante o simétrica y definida positiva para garantizar la convergencia.</li>
+                    </ul>
+                    
+                    <h2>Explicación del Método</h2>
+                    <ol>
+                        <li>
+                            <h3>Analizar la diagonal dominante</h3>
+                            <p>En este primer paso tenemos que despejar a de la ecuacion 1, b de la ecuacion 2 y c de la ecuacion 3.</p>
+                            <img src="dominanteseidel.png" class="img-fluid" alt="Despeje inicial Seidel">
+                            <p>Estas ecuaciones las llamaremos 4, 5 y 6.</p>
+                        </li>
+                        <li>
+                            <h3>Comenzar las iteraciones</h3>
+                            <p>En este paso calcularemos A1, utilizando la ecuacion 4 en la cual sutituimos b0 y c0 con un 0.</p>
+                            <img src="iteracionseidel.png" class="img-fluid" alt="Primera iteracion Seidel">
+                            <p>Al obtener el valor de A1 seguimos a calcular B1 con la ecuacion 5, en la cual sustituimos con A1 y C0. Hacemos lo propio con C1 utilizando la ecuacion 6 con A1 y B1.</p>
+                        </li>
+                        <li>
+                            <h3>Calcular el error.</h3>
+                            <p>El siguiente paso es calcular el error para las 3 variables (a, b y c). Para hacerlo simplemente le restaremos al valor calculado el valor con el que hicimos los calculos.</p>
+                            <img src="errorjacobi.png" class="img-fluid" alt="Fórmula Error Seidel">
+                            <p>En esta primera iteracion seria A1 - A0 para el caso de la variable a. El error tiene que ser .001 almenos, de lo contrario volvemos a iterar usando el proceso del paso 2.</p>
+                        </li>
+                        <li>
+                            <h3>Encontrar el resultado final.</h3>
+                            <p>Al encontrar en las 3 variables un factor error de .001 terminaremos nuestro proceso, ya que habremos encontrado nuestros resultados deseados.</p>
+                            <img src="errordeseado.png" class="img-fluid" alt="Error deseado">
+                        </li>
+                    </ol>
+                    
+                    <h2>Video explicativo</h2>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/bj6-WObfMm8?si=I7jN5tm0XZe5Wne5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <br><br>
+                    <a href="practicasei.html" class="btn btn-primary">Practica</a>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <footer align="center">
+        <p>©2024 Marco Antonio Arreola de León</p>
+        <p>Pedro de Alba SN, Niños Héroes, Ciudad Universitaria, 66455 San Nicolás de los Garza, N.L.</p>
+        <p>Proyecto realizado para: Métodos Numéricos.</p>
+        <div class="buttons">
+            <a href="https://www.facebook.com/profile.php?id=61556784717915" class="fa fa-facebook" aria-label="Facebook"></a>
+            <a href="https://www.instagram.com/hermes_fime/" class="fa fa-instagram" aria-label="Instagram"></a>
+        </div>
+    </footer>
+</body>
+</html>
