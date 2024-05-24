@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="estilos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rosario:ital,wght@0,300..700;1,300..700&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">   
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Cormorant+Upright:wght@300;400;500;600;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rosario:ital,wght@0,300..700;1,300..700&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/10e8731c12.js" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Cormorant+Upright:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rosario:ital,wght@0,300..700;1,300..700&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/10e8731c12.js" crossorigin="anonymous"></script>
     <title>Mediateca MenNum</title>
     <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+        }
         .container {
             text-align: center;
             margin: 20px;
@@ -22,7 +23,7 @@
             margin: 0 auto 20px;
         }
         .practice-button, .difficulty-buttons button, .result-boxes button, .new-buttons button {
-            background-color: #3e8e41;
+            background-color: #4CAF50;
             color: white;
             padding: 15px 20px;
             margin: 10px;
@@ -30,63 +31,85 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            font-size: 1em;
         }
         .practice-button:hover, .difficulty-buttons button:hover, .result-boxes button:hover, .new-buttons button:hover {
-            background-color: #3e8e41;
+            background-color: #45a049;
         }
         .result-boxes input {
             padding: 10px;
             margin: 5px;
             width: calc(100% - 22px);
             max-width: 300px;
+            font-size: 1em;
         }
         .result-boxes .result {
             margin-top: 10px;
-            font-size: 18px;
+            font-size: 1.125em;
         }
         .new-buttons {
             display: none;
         }
         #cronometro {
-            font-size: 24px;
+            font-size: 1.5em;
             margin-top: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="menu.html">Métodos</a></li>
-            <li><a href="dudas1.html">Dudas</a></li>
-        </ul>
-    </nav>
-</header>
-    <div class="container">
-        <h1>Gauss-Seidel</h1>
-        <div class="image-container">
-            <img id="currentImage" src="cabezon.webp" alt="Imagen inicial">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Métodos</a></li>
+                <li><a href="dudas1.html">Dudas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Gauss-Seidel</h1>
+            <div class="image-container">
+                <img id="currentImage" src="cabezon.webp" alt="Imagen del método Gauss-Seidel">
+            </div>
+            <button class="practice-button" onclick="mostrarBotonesNivel()">Practicar</button>
+            <div class="difficulty-buttons" style="display: none;">
+                <button onclick="seleccionarNivel('facil', 20)">Fácil</button>
+                <button onclick="seleccionarNivel('dificil', 10)">Difícil</button>
+                <button onclick="seleccionarNivel('complejo', 5)">Complejo</button>
+            </div>
+            <div class="result-boxes" style="display: none;">
+                <div id="cronometro" aria-live="polite"></div>
+                <label for="resultadoX">Resultado x</label>
+                <input type="text" id="resultadoX" placeholder="Resultado x">
+                <label for="resultadoY">Resultado y</label>
+                <input type="text" id="resultadoY" placeholder="Resultado y">
+                <label for="resultadoZ">Resultado z</label>
+                <input type="text" id="resultadoZ" placeholder="Resultado z">
+                <div id="resultadoFinal" class="result"></div>
+                <button onclick="validarRespuestas()">Validar Respuestas</button>
+            </div>
+            <div class="new-buttons" id="newButtons">
+                <button id="incorrectButton" onclick="intentarDeNuevo()">Vuelve a estudiar</button>
+                <button id="correctButton" onclick="continuar()">Continuar</button>
+            </div>
         </div>
-        <div class="practice-button" onclick="mostrarBotonesNivel()">Practicar</div>
-        <div class="difficulty-buttons" style="display: none;">
-            <button onclick="seleccionarNivel('facil', 20)">Fácil</button>
-            <button onclick="seleccionarNivel('dificil', 10)">Difícil</button>
-            <button onclick="seleccionarNivel('complejo', 5)">Complejo</button>
-        </div>
-        <div class="result-boxes" style="display: none;">
-            <div id="cronometro"></div>
-            <input type="text" id="resultadoX" placeholder="Resultado x">
-            <input type="text" id="resultadoY" placeholder="Resultado y">
-            <input type="text" id="resultadoZ" placeholder="Resultado z">
-            <div id="resultadoFinal" class="result"></div>
-            <button onclick="validarRespuestas()">Validar Respuestas</button>
-        </div>
-        <div class="new-buttons" id="newButtons">
-            <button id="incorrectButton" onclick="intentarDeNuevo()">Vuelve a estudiar</button>
-            <button id="correctButton" onclick="continuar()">Continuar</button>
-        </div>
-    </div>
+    </main>
 
     <script>
         let timer;
@@ -140,7 +163,6 @@
 
         function tiempoTerminado() {
             alert('Se terminó el tiempo.');
-            // Aquí puedes reiniciar el formulario o redirigir al usuario
             location.reload();
         }
 
@@ -182,25 +204,22 @@
         }
 
         function intentarDeNuevo() {
-            // Aquí puedes reiniciar el formulario o recargar la página para intentar de nuevo
-            //location.reload();
-            window.location.href = 'gauss_seidel.html'; // Reemplaza 'otra_pagina.html' con la URL de la página a la que deseas redirigir
+            window.location.href = 'gauss_seidel.html';
         }
 
         function continuar() {
-            // Aquí puedes redirigir al usuario a otra página o mostrar un mensaje de felicitación
             alert('¡Felicidades! Has completado el ejercicio.');
-            window.location.href = 'menu.html'; // Reemplaza 'otra_pagina.html' con la URL de la página a la que deseas redirigir
+            window.location.href = 'menu.html';
         }
     </script>
     <footer align="center">
-        <p>©2024 Marco Antonio Arreola de León</p></br>
-        <p>Pedro de Alba SN, Niños Héroes, Ciudad Universitaria, 66455 San Nicolás de los Garza, N.L.</p></br>
+        <p>©2024 Marco Antonio Arreola de León</p><br>
+        <p>Pedro de Alba SN, Niños Héroes, Ciudad Universitaria, 66455 San Nicolás de los Garza, N.L.</p><br>
         <p>Proyecto realizado para: Métodos Numéricos.</p>
         <div class="buttons">
             <a href="https://www.facebook.com/profile.php?id=61556784717915" class="fa fa-facebook" aria-label="Facebook"></a>
             <a href="https://www.instagram.com/hermes_fime/" class="fa fa-instagram" aria-label="Instagram"></a>
-          </div>
+        </div>
     </footer>
 </body>
 </html>
